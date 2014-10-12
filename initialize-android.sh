@@ -3,9 +3,6 @@
 # raise an error if any command fails!
 set -e
 
-INITIALIZATION_FILE="$ANDROID_HOME/.initialized-dependencies"
-
-if [ ! -e ${INITIALIZATION_FILE} ]; then
   # fetch and initialize $ANDROID_HOME
   download-android
   # Use the latest android sdk tools
@@ -22,4 +19,3 @@ if [ ! -e ${INITIALIZATION_FILE} ]; then
   echo y | android update sdk --no-ui --filter sys-img-armeabi-v7a-android-19 --all > /dev/null
 
   touch ${INITIALIZATION_FILE}
-fi
