@@ -21,9 +21,5 @@ if [ ! -e ${INITIALIZATION_FILE} ]; then
   # Specify at least one system image if you want to run emulator tests
   echo y | android update sdk --no-ui --filter sys-img-armeabi-v7a-android-19 --all > /dev/null
 
-  echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
-
-  emulator -avd test -no-skin -no-audio -no-window &
-
   touch ${INITIALIZATION_FILE}
 fi
