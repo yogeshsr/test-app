@@ -18,4 +18,3 @@ set -e
   # Specify at least one system image if you want to run emulator tests
   echo y | android update sdk --no-ui --filter sys-img-armeabi-v7a-android-19 --all > /dev/null
 
-  touch ${INITIALIZATION_FILE}
