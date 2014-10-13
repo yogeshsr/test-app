@@ -7,4 +7,4 @@ sh android-wait-for-emulator
 
 npm install mocha chai chai-as-promised colors underscore wd
 cd appium && node . &
-mocha android-simple.js
+cd test && mocha android-simple.js
