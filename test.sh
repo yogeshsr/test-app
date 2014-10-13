@@ -6,5 +6,3 @@ emulator -avd test -no-skin -no-audio -no-window &
 git clone https://github.com/appium/appium.git
 cd appium && ./reset.sh --android
 
-cd test && npm install mocha chai chai-as-promised colors underscore wd
-
