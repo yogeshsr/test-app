@@ -16,7 +16,7 @@ describe("android simple", function () {
 
 	before(function() {
 		desired = {
-			"appium-version": "1.2.0",
+			"appiumVersion": "1.2.1",
 			platformName: "Android",
 			platformVersion: "4.4.2",
 			deviceName: "",
