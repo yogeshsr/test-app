@@ -5,5 +5,5 @@ emulator -avd test -no-skin -no-audio -no-window &
 
 git clone https://github.com/appium/appium.git
 (cd appium && git checkout -b v1.2.0 v1.2.0)
-(cd appium && ./reset.sh)
+(cd appium && ./reset.sh --verbose)
 
