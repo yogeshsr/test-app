@@ -18,11 +18,11 @@ describe("android simple", function () {
 		desired = {
 			"appium-version": "1.2.0",
 			platformName: "Android",
-			platformVersion: "4.4",
+			platformVersion: "4.4.2",
 			deviceName: "",
 			app: "../test/DCSMain-debug.apk",
-			"app-package": "com.thoughtworks.dcs",
-			"app-activity": "DCSMain"
+			"appPackage": "com.thoughtworks.dcs",
+			"appActivity": "DCSMain"
 		};
 		
 		return browser
@@ -32,23 +32,16 @@ describe("android simple", function () {
 
 
 	it("should find an element", function () {
-		browser
-			.sleep(10000);
-	    browser.contexts().then(function (contexts) { // get list of available views. Returns array: ["NATIVE_APP","WEBVIEW_1"]
-	        for (var i=0;i<contexts.length; i++) {
-	        	console.log('avail context: ' + contexts[i]);
-	        }
-	    })
 
 		return browser
 			.sleep(10000)
-			//.context("WEBVIEW_com.thoughtworks.dcs")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").click()
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").sendKeys("tester150411@gmail.com")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[2]").sendKeys("tester150411")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[3]").sendKeys("https://dcsci.twhosted.com")
 			.elementByName("Login").click()
 			.fin(function() {
+				browser.context('NATIVE_APP')
 				return browser.quit();
 			});
 	});
