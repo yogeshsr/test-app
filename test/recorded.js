@@ -1,7 +1,7 @@
 "use strict";
 
 describe("android simple", function () {
-	this.timeout(300000);
+	this.timeout(120000);
 	var wd = require("wd");
 	var chai = require("chai");
 	var chaiAsPromised = require("chai-as-promised");
@@ -16,7 +16,7 @@ describe("android simple", function () {
 
 	before(function() {
 		desired = {
-			"appium-version": "1.0",
+			"appium-version": "1.2.0",
 			platformName: "Android",
 			platformVersion: "4.4",
 			deviceName: "",
@@ -32,9 +32,17 @@ describe("android simple", function () {
 
 
 	it("should find an element", function () {
+		browser
+			.sleep(10000);
+	    browser.contexts().then(function (contexts) { // get list of available views. Returns array: ["NATIVE_APP","WEBVIEW_1"]
+	        for (var i=0;i<contexts.length; i++) {
+	        	console.log('avail context: ' + contexts[i]);
+	        }
+	    })
 
 		return browser
-			.sleep(5000)
+			.sleep(10000)
+			//.context("WEBVIEW_com.thoughtworks.dcs")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").click()
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").sendKeys("tester150411@gmail.com")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[2]").sendKeys("tester150411")
