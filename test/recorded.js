@@ -20,7 +20,7 @@ describe("android simple", function () {
 			platformName: "Android",
 			platformVersion: "4.4.2",
 			deviceName: "",
-			app: "../test/DCSMain-debug.apk",
+			app: "../../test/DCSMain-debug.apk",
 			"appPackage": "com.thoughtworks.dcs",
 			"appActivity": "DCSMain"
 		};
