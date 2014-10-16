@@ -1,7 +1,7 @@
 "use strict";
 
 describe("android simple", function () {
-	this.timeout(120000);
+	this.timeout(240000); //4minu
 	var wd = require("wd");
 	var chai = require("chai");
 	var chaiAsPromised = require("chai-as-promised");
@@ -20,9 +20,13 @@ describe("android simple", function () {
 			platformName: "Android",
 			platformVersion: "4.4.2",
 			deviceName: "",
+			autoWebview: true,
+			autoWebviewTimeout: '500',
 			app: "../../test/DCSMain-debug.apk",
 			"appPackage": "com.thoughtworks.dcs",
-			"appActivity": "DCSMain"
+			"appActivity": "DCSMain",
+			"appWaitActivity": "DCSMain",
+			"newCommandTimeout": '186000'
 		};
 		
 		return browser
@@ -34,7 +38,7 @@ describe("android simple", function () {
 	it("should find an element", function () {
 
 		return browser
-			.sleep(10000)
+			.sleep(180000)
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").click()
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").sendKeys("tester150411@gmail.com")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[2]").sendKeys("tester150411")
