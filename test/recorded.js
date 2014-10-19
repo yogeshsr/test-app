@@ -1,7 +1,7 @@
 "use strict";
 
 describe("android simple", function () {
-	this.timeout(240000); //4minu
+	this.timeout(600000); //10minu
 	var wd = require("wd");
 	var chai = require("chai");
 	var chaiAsPromised = require("chai-as-promised");
@@ -18,10 +18,11 @@ describe("android simple", function () {
 		desired = {
 			"appiumVersion": "1.2.1",
 			platformName: "Android",
+			//automationName: 'Selendroid',
 			platformVersion: "4.4.2",
 			deviceName: "",
 			autoWebview: true,
-			autoWebviewTimeout: '500',
+			autoWebviewTimeout: '60000',
 			app: "../../test/DCSMain-debug.apk",
 			"appPackage": "com.thoughtworks.dcs",
 			"appActivity": "DCSMain",
@@ -31,14 +32,14 @@ describe("android simple", function () {
 		
 		return browser
 		.init(desired)
-		.setImplicitWaitTimeout(3000);
+		.setImplicitWaitTimeout(5000);
 	})
 
 
 	it("should find an element", function () {
 
 		return browser
-			.sleep(180000)
+			.sleep(180000) //3minu
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").click()
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").sendKeys("tester150411@gmail.com")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[2]").sendKeys("tester150411")
