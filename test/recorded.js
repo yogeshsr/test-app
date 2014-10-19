@@ -22,7 +22,7 @@ describe("android simple", function () {
 			platformVersion: "4.4.2",
 			deviceName: "",
 			autoWebview: true,
-			autoWebviewTimeout: '60000',
+			autoWebviewTimeout: '20000', //20 sec
 			app: "../../test/DCSMain-debug.apk",
 			"appPackage": "com.thoughtworks.dcs",
 			"appActivity": "DCSMain",
