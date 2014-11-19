@@ -18,16 +18,12 @@ describe("android simple", function () {
 		desired = {
 			"appiumVersion": "1.2.1",
 			platformName: "Android",
-			//automationName: 'Selendroid',
 			platformVersion: "4.4.2",
 			deviceName: "",
-			autoWebview: true,
-			autoWebviewTimeout: '20000', //20 sec
 			app: "../../test/DCSMain-debug.apk",
 			"appPackage": "com.thoughtworks.dcs",
 			"appActivity": "DCSMain",
-			"appWaitActivity": "DCSMain",
-			"newCommandTimeout": '186000'
+			"appWaitActivity": "DCSMain"
 		};
 		
 		return browser
@@ -39,7 +35,7 @@ describe("android simple", function () {
 	it("should find an element", function () {
 
 		return browser
-			.sleep(180000) //3minu
+			.sleep(30000) //1minu
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").click()
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[1]").sendKeys("tester150411@gmail.com")
 			.elementByXPath("//android.view.View[1]/android.widget.EditText[2]").sendKeys("tester150411")
