@@ -32,11 +32,10 @@ class FindElementTest(unittest.TestCase):
 
         self.driver.find_elements_by_class_name('btn')[0].click();
 
+        print('setting wait for 30 sec')
+        self.driver.implicitly_wait(300)
         menu = self.driver.find_element_by_xpath('//a[@ui-turn-on="myDropdown"]')
         menu.click()
-        
-
-        time.sleep(10)
 
     def tearDown(self):
         self.driver.quit()
