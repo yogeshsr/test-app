@@ -14,4 +14,4 @@ wget -O Garner-debug.apk https://www.dropbox.com/s/nwjfywczan66gni/Garner-debug.
 
 adb shell input keyevent 82 &
 
-java -jar selendroid-standalone-0.14.0-with-dependencies.jar -app Garner-debug.apk & > a.log
+java -jar selendroid-standalone-0.14.0-with-dependencies.jar -app Garner-debug.apk >a.log 2>&1
