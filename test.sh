@@ -10,7 +10,5 @@ pip install selenium
 
 wget -O Garner-debug.apk https://www.dropbox.com/s/nwjfywczan66gni/Garner-debug.apk?dl=0 Garner-debug.apk
 
-./android-wait-for-emulator
 
-adb shell input keyevent 82 &
 
